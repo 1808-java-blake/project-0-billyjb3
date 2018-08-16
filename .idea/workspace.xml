@@ -1,47 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd32508f-a111-4b71-963a-51220df9c9e5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_2_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/BankApp.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/ConnectionUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/DatabaseData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/database.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/revature/billy/bankapp/BankAppTest.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/Launch.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/Launch.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/Session.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/BankApp.class" afterPath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/BankApp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/data/Account.class" afterPath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/data/Account.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/data/DataAccess.class" afterPath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/data/DataAccess.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/data/SerializedData.class" afterPath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/data/SerializedData.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/data/Transaction.class" afterPath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/data/Transaction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/data/User.class" afterPath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/data/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/screen/HomeScreen.class" afterPath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/screen/HomeScreen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/screen/LoginScreen.class" afterPath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/screen/LoginScreen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/screen/RegisterScreen.class" afterPath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/screen/RegisterScreen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/screen/Screen.class" afterPath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/screen/Screen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/screen/UserScreen.class" afterPath="$PROJECT_DIR$/target/classes/com/revature/billy/bankapp/screen/UserScreen.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Project0.iml" afterPath="$PROJECT_DIR$/Project0.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/Account.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/Account.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/DataAccess.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/DataAccess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/SerializedData.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/SerializedData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/Transaction.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/Transaction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/AdminScreen.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/AdminScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/HomeScreen.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/HomeScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/LoginScreen.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/LoginScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/NewAccountScreen.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/NewAccountScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/RegisterScreen.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/RegisterScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/Screen.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/Screen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/UserScreen.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/UserScreen.java" />
-    </list>
+    <list default="true" id="fd32508f-a111-4b71-963a-51220df9c9e5" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -136,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/Account.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
-              <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+              <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
               <folding>
                 <element signature="e#638#639#0" expanded="true" />
                 <element signature="e#668#669#0" expanded="true" />
@@ -785,7 +745,7 @@
         <state relative-caret-position="289">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -839,7 +799,7 @@
         <state relative-caret-position="714">
           <caret line="60" column="5" lean-forward="true" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1011,7 +971,7 @@
         <state relative-caret-position="-442">
           <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1027,7 +987,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/Account.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
-          <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
           <folding>
             <element signature="e#638#639#0" expanded="true" />
             <element signature="e#668#669#0" expanded="true" />
