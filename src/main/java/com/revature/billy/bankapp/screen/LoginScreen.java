@@ -1,44 +1,52 @@
 package com.revature.billy.bankapp.screen;
 
-import com.revature.billy.bankapp.BankApp;
+
+import com.revature.billy.bankapp.data.User;
 
 /**
  * Created by User on 8/9/2018.
  */
 public class LoginScreen extends Screen
 {
-    public LoginScreen(BankApp bankApp)
-    {
-        super(bankApp);
-    }
 
-    public void start()
+    public Screen start()
     {
-        System.out.println("\nTO LOGIN PLEASE ENTER USERNAME\n");
-        displayCommands();
-        handleInput();
+        System.out.println("\nPlease enter your username\n");
+        //displayCommands();
+        return handleInput();
     }
-    public void handleInput()
+    public Screen handleInput()
     {
         String input = scanner.nextLine();
         if(input.equals("home"))
-            bankApp.displayHomeScreen();
+            return new HomeScreen();
         else if(input.equals("help"))
-            start();
+            return start();
         else
         {
             String username = input;
-            if(bankApp.verifyUsername(username))
+            if(data.verifyUsername(username))
             {
                 System.out.println("Please enter password");
                 String password = scanner.nextLine();
-                if(bankApp.login(username, password))
-                    bankApp.displayUserScreen();
+                User user = data.verifyUser(username, password);
+                if(user != null)
+                {
+                    if(user.isAdmin())
+                        return new AdminScreen();
+                    else
+                        return new UserScreen(user);
+                }
+                else
+                {
+                    System.out.println("Wrong username and password combination");
+                    return handleInput();
+                }
             }
             else
             {
                 System.out.println("Username not found");
-                handleInput();
+                return handleInput();
             }
         }
     }

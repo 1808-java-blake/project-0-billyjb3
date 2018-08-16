@@ -1,48 +1,87 @@
 package com.revature.billy.bankapp.screen;
 
-import com.revature.billy.bankapp.BankApp;
+import com.revature.billy.bankapp.data.User;
 
 /**
  * Created by User on 8/9/2018.
  */
 public class RegisterScreen extends Screen
 {
-    public RegisterScreen(BankApp bankApp)
+    public Screen start()
     {
-        super(bankApp);
+        System.out.println("\nPlease enter a new username 6 to 12 characters long");
+        //displayCommands();
+        return handleInput();
     }
+    public Screen handleInput()
+    {
+        String[] input = scanner.nextLine().trim().toLowerCase().split(" ");
 
-    public void start()
-    {
-        System.out.println("\nTO REGISTER PLEASE ENTER A NEW USERNAME\n");
-        displayCommands();
-        handleInput();
-    }
-    public void handleInput()
-    {
-        String input = scanner.nextLine();
-        if(input.equals("home"))
-            bankApp.displayHomeScreen();
-        else if(input.equals("help"))
-            start();
-        else
+        if(input[0].equals("home"))
+            return new HomeScreen();
+        else if(input[0].equals("help"))
+            return start();
+        else if(input[0].equals("exit"))
         {
-            String username = input;
-            System.out.println("please enter password");
-            String password1 = scanner.nextLine();
-            System.out.println("please confirm password");
-            String password2 = scanner.nextLine();
-            if((username != null && !username.equals("")) || (password1 != null && !password1.equals("")))
+            System.exit(0);
+            return null;
+        }
+        else
+            return createUser(input);
+    }
+    private Screen createUser(String[] input)
+    {
+        String username = input[0];
+        boolean admin = false;
+        if(input.length == 2 && input[1].equals("admin"))
+            admin = true;
+        if(username.length() < 6 || username.length() > 12)
+        {
+            System.out.println("username was an invalid length");
+            return start();
+        }
+        System.out.println("username = "+username+" | enter 'cancel' to restart");
+        System.out.println("please enter password 8 to 15 characters long");
+        String password1 = scanner.nextLine();
+        if(password1.equals("cancel"))
+            return start();
+        if(password1.length() < 8 || password1.length() > 15)
+        {
+            System.out.println("password was an invalid length");
+            return start();
+        }
+        System.out.println("please confirm password");
+        String password2 = scanner.nextLine();
+        if(password2.equals("cancel"))
+            return start();
+        if(password1.equals(password2))
+        {
+            if(data.createUser(new User(username, password1, admin)))
             {
-                if(password1.equals(password2))
-                    bankApp.register(username, password1);
+                System.out.println("New user account created!");
+                return new HomeScreen();
+            }
+            else
+            {
+                System.out.println("failed to create new user");
+                return start();
             }
         }
+        else
+        {
+            System.out.println("Passwords didn't match");
+            return start();
+        }
     }
+
     public void displayCommands()
     {
-        System.out.println("\t\t---Commands---");
-        System.out.println("Return home:\t\t\thome");
-        System.out.println("Redisplay options:\t\thelp\n");
+        System.out.println("_____________________________________");
+        System.out.println("|          --- Commands ---         |");
+        System.out.println("|                                   |");
+        System.out.println("|  Return home:               home  |");
+        System.out.println("|  Redisplay options:         help  |");
+        System.out.println("|  To close the app:          exit  |");
+        System.out.println("|___________________________________|");
     }
 }

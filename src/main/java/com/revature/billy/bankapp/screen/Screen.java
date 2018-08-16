@@ -1,6 +1,7 @@
 package com.revature.billy.bankapp.screen;
 
-import com.revature.billy.bankapp.BankApp;
+import com.revature.billy.bankapp.data.DataAccess;
+import com.revature.billy.bankapp.data.SerializedData;
 
 import java.util.Scanner;
 
@@ -10,14 +11,9 @@ import java.util.Scanner;
 public abstract class Screen
 {
     protected Scanner scanner = new Scanner(System.in);
-    protected BankApp bankApp;
+    protected DataAccess data = DataAccess.DAO;
 
-    public Screen(BankApp bankApp)
-    {
-        this.bankApp = bankApp;
-    }
-
-    public abstract void start();
-    public abstract void displayCommands();
-    public abstract void handleInput();
+    public abstract Screen start();
+    protected abstract void displayCommands();
+    protected abstract Screen handleInput();
 }
