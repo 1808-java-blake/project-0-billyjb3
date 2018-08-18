@@ -11,8 +11,8 @@ public interface DataAccess
 
     boolean verifyUsername(String username);
     User verifyUser(String username, String password);
-    boolean createUser(User user);
+    boolean createUser(User user, String username);
     boolean updateUser(User user);
-    ArrayList<User> getUsers();
+    ArrayList<String> getUsernames();
     User getUser(String username);
 }

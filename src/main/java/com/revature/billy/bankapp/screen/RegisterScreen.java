@@ -15,13 +15,13 @@ public class RegisterScreen extends Screen
     }
     public Screen handleInput()
     {
-        String[] input = scanner.nextLine().trim().toLowerCase().split(" ");
+        String input = scanner.nextLine().trim().toLowerCase();
 
-        if(input[0].equals("home"))
+        if(input.equals("home"))
             return new HomeScreen();
-        else if(input[0].equals("help"))
+        else if(input.equals("help"))
             return start();
-        else if(input[0].equals("exit"))
+        else if(input.equals("exit"))
         {
             System.exit(0);
             return null;
@@ -29,47 +29,60 @@ public class RegisterScreen extends Screen
         else
             return createUser(input);
     }
-    private Screen createUser(String[] input)
+    private Screen createUser(String input)
     {
-        String username = input[0];
-        boolean admin = false;
-        if(input.length == 2 && input[1].equals("admin"))
-            admin = true;
+        String username = input;
+
         if(username.length() < 6 || username.length() > 12)
         {
             System.out.println("username was an invalid length");
             return start();
         }
+
+        if(!data.verifyUsername(username))
+        {
+            System.out.println("username already taken");
+            return handleInput();
+        }
+
         System.out.println("username = "+username+" | enter 'cancel' to restart");
         System.out.println("please enter password 8 to 15 characters long");
         String password1 = scanner.nextLine();
+
         if(password1.equals("cancel"))
             return start();
+
         if(password1.length() < 8 || password1.length() > 15)
         {
             System.out.println("password was an invalid length");
             return start();
         }
+
         System.out.println("please confirm password");
         String password2 = scanner.nextLine();
+
         if(password2.equals("cancel"))
             return start();
-        if(password1.equals(password2))
+        if(!password1.equals(password2))
         {
-            if(data.createUser(new User(username, password1, admin)))
-            {
-                System.out.println("New user account created!");
-                return new HomeScreen();
-            }
-            else
-            {
-                System.out.println("failed to create new user");
-                return start();
-            }
+            System.out.println("Passwords didn't match");
+            return start();
+        }
+
+        System.out.println("enter your first name:");
+        String firstname = scanner.nextLine();
+
+        System.out.println("enter your last name:");
+        String lastname = scanner.nextLine();
+
+        if(data.createUser(new User(username, firstname, lastname), password1))
+        {
+            System.out.println("New user account created!");
+            return new HomeScreen();
         }
         else
         {
-            System.out.println("Passwords didn't match");
+            System.out.println("failed to create new user");
             return start();
         }
     }

@@ -4,6 +4,7 @@ import com.revature.billy.bankapp.data.Account;
 import com.revature.billy.bankapp.data.Transaction;
 import com.revature.billy.bankapp.data.User;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 /**
@@ -26,7 +27,7 @@ public class AdminScreen extends Screen
         System.out.println("\t\t\t\t---commands---");
         System.out.println("To view all users:\t\t\t\t\t\tusers");
         System.out.println("To view a users account info:\t\t\taccount <username>");
-        System.out.println("To view transactions on an account:\t\ttrans <username> <first 4 digits of acc.#>");
+        System.out.println("To view transactions on an account:\t\ttrans <username> <account number>");
         System.out.println("To logout and return to home screen:\tlogout");
         System.out.println("To view commands:\t\t\t\t\t\thelp");
     }
@@ -37,9 +38,9 @@ public class AdminScreen extends Screen
         String[] input = scanner.nextLine().split(" ");
         if (input[0].equals("users"))
         {
-            ArrayList<User> users = data.getUsers();
+            ArrayList<String> users = data.getUsernames();
             for(int i = 0; i < users.size(); i++)
-                System.out.println(users.get(i).getUsername());
+                System.out.println(users.get(i));
             return handleInput();
         }
         else if (input[0].equals("account"))
@@ -54,7 +55,7 @@ public class AdminScreen extends Screen
             for(int i = 0; i < accounts.size(); i++)
             {
                 String type = accounts.get(i).getType();
-                String id = accounts.get(i).getID();
+                int id = accounts.get(i).getID();
                 double balance = accounts.get(i).getBalance();
                 System.out.println("Type: "+type+" | ID: "+id+" | balance: "+balance);
             }
@@ -64,7 +65,7 @@ public class AdminScreen extends Screen
         {
             if(input.length != 3)
             {
-                System.out.println("must include username and first 4 digits of account number");
+                System.out.println("must include username and account number");
                 return handleInput();
             }
             String username = input[1];
@@ -74,7 +75,7 @@ public class AdminScreen extends Screen
             Account account = null;
             for(int i = 0; i < accounts.size(); i++)
             {
-                if(acc.equals(accounts.get(i).getID().substring(0,4)))
+                if(stringToInt(acc) == accounts.get(i).getID())
                     account = accounts.get(i);
             }
             if(account == null)
@@ -85,7 +86,7 @@ public class AdminScreen extends Screen
             ArrayList<Transaction> trans = account.getTransactions();
             for(int i = 0; i < trans.size(); i++)
             {
-                String date = trans.get(i).getDate();
+                Date date = trans.get(i).getDate();
                 String type = trans.get(i).getType();
                 double amount = trans.get(i).getAmount();
                 System.out.println(date+" | type: "+type+" | amount: "+amount);
@@ -103,6 +104,20 @@ public class AdminScreen extends Screen
         {
             System.out.println("'"+input[0]+"' not recognized");
             return start();
+        }
+    }
+
+    public Integer stringToInt(String number)
+    {
+        try
+        {
+            int converted = Integer.parseInt(number);
+            return converted;
+        }
+        catch (Exception e)
+        {
+            System.out.println("Could not convert string into an integer");
+            return null;
         }
     }
 }

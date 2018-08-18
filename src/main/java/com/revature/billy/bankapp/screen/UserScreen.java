@@ -3,6 +3,7 @@ package com.revature.billy.bankapp.screen;
 import com.revature.billy.bankapp.*;
 import com.revature.billy.bankapp.data.*;
 
+import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -57,11 +58,11 @@ public class UserScreen extends Screen
     {
         System.out.println("\t\t\t\t---Commands---");
         System.out.println("View accounts:\t\t\t\t\taccounts");
-        System.out.println("View transactions:\t\t\t\ttrans <first 4 digits of acc.#>");
+        System.out.println("View transactions:\t\t\t\ttrans <Account Number>");
         System.out.println("Create new account:\t\t\t\tnewacc");
-        System.out.println("Close existing account:\t\t\tclose <first 4 digits of acc.#>");
-        System.out.println("Make a withdraw:\t\t\t\twithdraw <first 4 digits of acc.#>");
-        System.out.println("Make a deposit:\t\t\t\t\tdeposit <first 4 digits of acc.#>");
+        System.out.println("Close existing account:\t\t\tclose <Account Number>");
+        System.out.println("Make a withdraw:\t\t\t\twithdraw <Account Number>");
+        System.out.println("Make a deposit:\t\t\t\t\tdeposit <Account Number>");
         System.out.println("Logout and return home:\t\t\tlogout");
         System.out.println("Redisplay commands:\t\t\t\thelp");
     }
@@ -100,10 +101,11 @@ public class UserScreen extends Screen
         double balance = account.getBalance();
         if(balance != 0)
         {
-            Transaction trans = new Transaction("withdraw", balance, LocalDateTime.now().toString());
+            Transaction trans = new Transaction("withdraw", balance, new Date(System.currentTimeMillis()));
             account.addTransaction(trans);
         }
-        account.closeAccount();
+        account.setIsOpen(false);
+        data.updateUser(user);
         System.out.println("Account was successfully closed");
         return handleInput();
     }
@@ -122,6 +124,7 @@ public class UserScreen extends Screen
             return start();
 
         createTransaction(account, input, "withdraw");
+        data.updateUser(user);
         return handleInput();
     }
 
@@ -139,22 +142,18 @@ public class UserScreen extends Screen
             return start();
 
         createTransaction(account, input, "deposit");
+        data.updateUser(user);
         return handleInput();
     }
 
     ////////////////////HELPER METHODS//////////////////////////////////
     public Account getAccount(String acc)
     {
-        if(acc.length() != 4)
-        {
-            System.out.println("must include first 4 digits of account");
-            return null;
-        }
         ArrayList<Account> accounts = user.getAccounts();
         Account account = null;
         for(int i = 0; i < accounts.size(); i++)
         {
-            if(accounts.get(i).getID().substring(0, 4).equals(acc))
+            if(accounts.get(i).getID() == stringToInt(acc))
                 account = accounts.get(i);
         }
         if(account == null)
@@ -177,7 +176,7 @@ public class UserScreen extends Screen
             return;
         }
 
-        Transaction transaction = new Transaction(type, amount, LocalDateTime.now().toString());
+        Transaction transaction = new Transaction(type, amount, new Date(System.currentTimeMillis()));
         account.addTransaction(transaction);
         System.out.println(type+" was successful");
         data.updateUser(user);
@@ -188,7 +187,7 @@ public class UserScreen extends Screen
         for (int i = 0; i < accounts.size(); i++)
         {
             String type = accounts.get(i).getType();
-            String id = accounts.get(i).getID();
+            int id = accounts.get(i).getID();
             double balance = accounts.get(i).getBalance();
             System.out.println("Account type: " + type + "  | ID: " + id + " | Balance: $" + balance);
         }
@@ -198,10 +197,24 @@ public class UserScreen extends Screen
     {
         for(int i = 0; i < transactions.size(); i++)
         {
-            String date = transactions.get(i).getDate();
+            Date date = transactions.get(i).getDate();
             String type = transactions.get(i).getType();
             double amount = transactions.get(i).getAmount();
             System.out.println("Date: "+date+" | Type: "+type+" | Amount: $"+amount);
+        }
+    }
+
+    public Integer stringToInt(String number)
+    {
+        try
+        {
+            int converted = Integer.parseInt(number);
+            return converted;
+        }
+        catch (Exception e)
+        {
+            System.out.println("Could not convert input into an integer");
+            return null;
         }
     }
 }

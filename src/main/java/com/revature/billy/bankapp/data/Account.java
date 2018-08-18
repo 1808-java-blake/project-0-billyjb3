@@ -9,42 +9,60 @@ import java.util.ArrayList;
 public class Account implements Serializable
 {
     private String type;
-    private String id;
+    private int accountid;
+    private int userid;
     private double balance;
     private ArrayList<Transaction> transactions = new ArrayList<Transaction>();
     private static final long serialVersionUID = -9207581780330964758L;
     private boolean isOpen = true;
+    private boolean updated = false;
 
-    public Account(String type, String id, double balance)
+    public Account(String type, int userid)
     {
         this.type = type;
-        this.id = id;
-        this.balance = balance;
+        this.userid = userid;
+        accountid = -1;
+        balance = 0;
     }
 
-    public void closeAccount()
+    public int getUserid()
     {
-        isOpen = false;
+        return userid;
+    }
+    public boolean isOpen()
+    {
+        return isOpen;
+    }
+    public void setIsOpen(boolean isOpen)
+    {
+        this.isOpen = isOpen;
     }
     public void addTransaction(Transaction transaction)
     {
         transactions.add(transaction);
         balance += transaction.getAmount();
     }
+    public void setUpdated(boolean updated)
+    {
+        this.updated = updated;
+    }
     public ArrayList<Transaction> getTransactions()
     {
         return transactions;
     }
+    public void setTransactions(ArrayList<Transaction> transactions){this.transactions = transactions;}
     public String getType()
     {
         return type;
     }
-    public String getID()
+    public int getID()
     {
-        return id;
+        return accountid;
     }
+    public void setID(int id){this.accountid = id;}
     public double getBalance()
     {
         return balance;
     }
+    public void setBalance(double balance){this.balance = balance;}
 }

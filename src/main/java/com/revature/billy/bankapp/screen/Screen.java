@@ -1,7 +1,6 @@
 package com.revature.billy.bankapp.screen;
 
 import com.revature.billy.bankapp.data.DataAccess;
-import com.revature.billy.bankapp.data.SerializedData;
 
 import java.util.Scanner;
 

@@ -25,7 +25,7 @@ public class LoginScreen extends Screen
         else
         {
             String username = input;
-            if(data.verifyUsername(username))
+            if(!data.verifyUsername(username))
             {
                 System.out.println("Please enter password");
                 String password = scanner.nextLine();

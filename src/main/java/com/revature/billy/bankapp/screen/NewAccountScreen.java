@@ -31,13 +31,11 @@ public class NewAccountScreen extends Screen
         String input = scanner.nextLine();
         if(input.equals("checking"))
         {
-            r = new Random();
-            String id = (new Integer(r.nextInt(100000000)+10000000)).toString();
-            Account newacc = new Account("checking",id, 0);
+            Account newacc = new Account("checking", user.getUserid());
             user.addAccount(newacc);
             if(data.updateUser(user))
             {
-                System.out.println("New checking account with id: " + id + " was created!");
+                System.out.println("New checking account was created!");
                 return new UserScreen(user);
             }
             else
@@ -48,13 +46,11 @@ public class NewAccountScreen extends Screen
         }
         else if(input.equals("savings"))
         {
-            r = new Random();
-            String id = (new Integer(r.nextInt(100000000)+10000000)).toString();
-            Account newacc = new Account("savings",id, 0);
+            Account newacc = new Account("savings", user.getUserid());
             user.addAccount(newacc);
             if(data.updateUser(user))
             {
-                System.out.println("New savings account with id: " + id + " was created!");
+                System.out.println("New savings account was created!");
                 return new UserScreen(user);
             }
             else
