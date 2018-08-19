@@ -39,7 +39,7 @@ public class RegisterScreen extends Screen
             return start();
         }
 
-        if(!data.verifyUsername(username))
+        if(data.verifyUsername(username))
         {
             System.out.println("username already taken");
             return handleInput();
