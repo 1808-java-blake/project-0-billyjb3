@@ -64,7 +64,7 @@ public class DatabaseData implements DataAccess
     @Override
     public User verifyUser(String username, String password)
     {
-        String query = "SELECT COUNT(*) FROM users WHERE username = ? AND password = ?";
+        String query = "SELECT COUNT(*) FROM users WHERE username = ? AND pass = ?";
         try
         {
             PreparedStatement ps = connection.prepareStatement(query);
@@ -84,6 +84,7 @@ public class DatabaseData implements DataAccess
         catch (Exception e)
         {
             System.out.print("could not verify user");
+            e.printStackTrace();
             return null;
         }
     }
@@ -96,7 +97,6 @@ public class DatabaseData implements DataAccess
         try
         {
             PreparedStatement ps = connection.prepareStatement(query, new String[] {"userid"});
-            user.setUserid(getNextUserId());
             ps.setString(1, user.getUsername());
             ps.setString(2, password);
             ps.setString(3, user.getFirstname());
@@ -143,6 +143,7 @@ public class DatabaseData implements DataAccess
         }
         catch (Exception e)
         {
+            e.printStackTrace();
             System.out.println("Could not create new account");
         }
     }
@@ -165,6 +166,7 @@ public class DatabaseData implements DataAccess
         }
         catch (Exception e)
         {
+            e.printStackTrace();
             System.out.println("Could not create transaction");
         }
     }
@@ -200,6 +202,7 @@ public class DatabaseData implements DataAccess
         }
         catch (Exception e)
         {
+            e.printStackTrace();
             System.out.println("Could not update user");
             return false;
         }
@@ -220,6 +223,7 @@ public class DatabaseData implements DataAccess
         }
         catch (Exception e)
         {
+            e.printStackTrace();
             System.out.println("could not retrieve users");
             return null;
         }
@@ -232,6 +236,7 @@ public class DatabaseData implements DataAccess
         try
         {
             PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, username);
             ResultSet rs = ps.executeQuery();
             if(rs.next())
             {
@@ -255,6 +260,7 @@ public class DatabaseData implements DataAccess
         }
         catch (Exception e)
         {
+            e.printStackTrace();
             System.out.println("Get user query failed");
             return null;
         }
@@ -287,6 +293,7 @@ public class DatabaseData implements DataAccess
         }
         catch(Exception e)
         {
+            e.printStackTrace();
             System.out.println("Could not find Accounts");
             return null;
         }
@@ -317,33 +324,8 @@ public class DatabaseData implements DataAccess
         }
         catch (Exception e)
         {
-            System.out.println("Could not find Transactions");
-            return null;
-        }
-    }
-
-    public Integer getNextUserId()
-    {
-        String query = "SELECT MAX(userid) FROM users";
-        try
-        {
-            Statement s = connection.createStatement();
-            ResultSet rs = s.executeQuery(query);
-            if(rs.next())
-            {
-                int id = rs.getInt(1);
-                return ++id;
-            }
-            else
-            {
-                System.out.println("Could not get next userid");
-                return null;
-            }
-        }
-        catch (Exception e)
-        {
-            System.out.println("Could not get next userid");
             e.printStackTrace();
+            System.out.println("Could not find Transactions");
             return null;
         }
     }
@@ -356,6 +338,7 @@ public class DatabaseData implements DataAccess
         }
         catch(Exception e)
         {
+            e.printStackTrace();
             System.out.println("could not close connection");
             System.exit(0);
         }

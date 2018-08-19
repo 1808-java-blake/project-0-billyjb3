@@ -177,6 +177,7 @@ public class UserScreen extends Screen
         }
 
         Transaction transaction = new Transaction(type, amount, new Date(System.currentTimeMillis()));
+        transaction.setAccountid(account.getID());
         account.addTransaction(transaction);
         System.out.println(type+" was successful");
         data.updateUser(user);
