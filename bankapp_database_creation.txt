@@ -1,0 +1,26 @@
+SET SCHEMA 'bank_app';
+
+CREATE TABLE users (
+	userid SERIAL PRIMARY KEY,
+	username VARCHAR,
+	pass VARCHAR,
+	firstname VARCHAR,
+	lastname VARCHAR,
+	isadmin BOOLEAN
+);
+
+CREATE TABLE accounts (
+	accountid SERIAL PRIMARY KEY,
+	userid INTEGER REFERENCES users(userid),
+	accounttype VARCHAR,
+	balance DECIMAL,
+	isopen BOOLEAN
+);
+
+CREATE TABLE transactions (
+	transactionid SERIAL PRIMARY KEY,
+	accountid INTEGER REFERENCES accounts(accountid),
+	transactiontype VARCHAR,
+	amount DECIMAL,
+	datetime TIMESTAMP
+);
