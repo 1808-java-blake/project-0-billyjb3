@@ -164,23 +164,25 @@ public class UserScreen extends Screen
     public void createTransaction(Account account, String input, String type)
     {
         double amount = 0;
-        try {amount = Double.parseDouble(input);}
-        catch (Exception e) {System.out.println("Amount must be an number amount");}
-
-        if(type.equals("withdraw"))
-            amount = -amount;
-
-        if(amount < 0 && account.getBalance() < -amount)
+        try
         {
-            System.out.println("Insufficient funds");
-            return;
-        }
+            amount = Double.parseDouble(input);
+            if(type.equals("withdraw"))
+                amount = -amount;
 
-        Transaction transaction = new Transaction(type, amount, new Date(System.currentTimeMillis()));
-        transaction.setAccountid(account.getID());
-        account.addTransaction(transaction);
-        System.out.println(type+" was successful");
-        data.updateUser(user);
+            if(amount < 0 && account.getBalance() < -amount)
+            {
+                System.out.println("Insufficient funds");
+                return;
+            }
+
+            Transaction transaction = new Transaction(type, amount, new Date(System.currentTimeMillis()));
+            transaction.setAccountid(account.getID());
+            account.addTransaction(transaction);
+            System.out.println(type+" was successful");
+            data.updateUser(user);
+        }
+        catch (Exception e) {System.out.println("Amount must be an number amount");}
     }
 
     public void printAccounts(ArrayList<Account> accounts)

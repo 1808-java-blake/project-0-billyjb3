@@ -253,10 +253,7 @@ public class DatabaseData implements DataAccess
                 return user;
             }
             else
-            {
-                System.out.println("Could not retreive user in getuser");
                 return null;
-            }
         }
         catch (Exception e)
         {

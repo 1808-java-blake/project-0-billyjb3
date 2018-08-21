@@ -29,43 +29,15 @@ public class NewAccountScreen extends Screen
     public Screen handleInput()
     {
         String input = scanner.nextLine();
-        if(input.equals("checking"))
-        {
-            Account newacc = new Account("checking", user.getUserid());
-            user.addAccount(newacc);
-            if(data.updateUser(user))
-            {
-                System.out.println("New checking account was created!");
-                return new UserScreen(user);
-            }
-            else
-            {
-                System.out.println("There was a problem with the system. Sorry, try again later");
-                return new HomeScreen();
-            }
-        }
-        else if(input.equals("savings"))
-        {
-            Account newacc = new Account("savings", user.getUserid());
-            user.addAccount(newacc);
-            if(data.updateUser(user))
-            {
-                System.out.println("New savings account was created!");
-                return new UserScreen(user);
-            }
-            else
-            {
-                System.out.println("There was a problem with the system. Sorry, try again later");
-                return new HomeScreen();
-            }
-        }
+        if(input.equals("checking") || input.equals("savings"))
+            return createAccount(input);
         else if(input.equals("user"))
             return new UserScreen(user);
         else if(input.equals("logout"))
             return new HomeScreen();
         else
         {
-            System.out.println("Unrecognized input");
+            System.out.println("'"+input+"' not recognized");
             return handleInput();
         }
     }
@@ -76,5 +48,21 @@ public class NewAccountScreen extends Screen
         System.out.println("To return to user account:\tuser");
         System.out.println("To logout and return home:\tlogout");
         System.out.println("print help:\t\thelp\n");
+    }
+
+    public Screen createAccount(String type)
+    {
+        Account newacc = new Account(type, user.getUserid());
+        user.addAccount(newacc);
+        if(data.updateUser(user))
+        {
+            System.out.println("New "+type+" account was created!");
+            return new UserScreen(user);
+        }
+        else
+        {
+            System.out.println("There was a problem with the system. Sorry, try again later");
+            return new HomeScreen();
+        }
     }
 }

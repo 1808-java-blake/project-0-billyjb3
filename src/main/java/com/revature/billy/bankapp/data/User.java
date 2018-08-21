@@ -50,4 +50,5 @@ public class User implements Serializable
         return isAdmin;
     }
     public void setIsOpen(boolean isOpen){this.isOpen = isOpen;}
+    public boolean isOpen(){return isOpen;}
 }
