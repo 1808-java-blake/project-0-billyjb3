@@ -100,10 +100,7 @@ public class UserScreen extends Screen
             return handleInput();
         double balance = account.getBalance();
         if(balance != 0)
-        {
-            Transaction trans = new Transaction("withdraw", balance, new Date(System.currentTimeMillis()));
-            account.addTransaction(trans);
-        }
+            createTransaction(account, ""+balance, "withdraw");
         account.setIsOpen(false);
         data.updateUser(user);
         System.out.println("Account was successfully closed");
@@ -189,10 +186,13 @@ public class UserScreen extends Screen
     {
         for (int i = 0; i < accounts.size(); i++)
         {
-            String type = accounts.get(i).getType();
-            int id = accounts.get(i).getID();
-            double balance = accounts.get(i).getBalance();
-            System.out.println("Account type: " + type + "  | ID: " + id + " | Balance: $" + balance);
+            if(accounts.get(i).isOpen())
+            {
+                String type = accounts.get(i).getType();
+                int id = accounts.get(i).getID();
+                double balance = accounts.get(i).getBalance();
+                System.out.println("Account type: " + type + "  | ID: " + id + " | Balance: $" + balance);
+            }
         }
     }
 

@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd32508f-a111-4b71-963a-51220df9c9e5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/DatabaseData.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/DatabaseData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/AdminScreen.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/AdminScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/HomeScreen.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/HomeScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/NewAccountScreen.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/NewAccountScreen.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/UserScreen.java" afterPath="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/UserScreen.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,7 +28,7 @@
       <file leaf-file-name="DatabaseData.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/DatabaseData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="618">
+            <state relative-caret-position="1627">
               <caret line="254" column="16" lean-forward="false" selection-start-line="254" selection-start-column="16" selection-end-line="254" selection-end-column="16" />
               <folding>
                 <element signature="docComment;class#DatabaseData#0" expanded="false" />
@@ -41,8 +37,6 @@
                 <element signature="method#verifyUser#0;class#DatabaseData#0" expanded="false" />
                 <element signature="method#createUser#0;class#DatabaseData#0" expanded="false" />
                 <element signature="method#createAccount#0;class#DatabaseData#0" expanded="false" />
-                <element signature="method#createTransaction#0;class#DatabaseData#0" expanded="false" />
-                <element signature="method#updateUser#0;class#DatabaseData#0" expanded="false" />
                 <element signature="method#getUsernames#0;class#DatabaseData#0" expanded="false" />
                 <element signature="method#getAccounts#0;class#DatabaseData#0" expanded="false" />
                 <element signature="method#getTransactions#0;class#DatabaseData#0" expanded="false" />
@@ -62,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserScreen.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserScreen.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/UserScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2635">
-              <caret line="184" column="84" lean-forward="false" selection-start-line="184" selection-start-column="84" selection-end-line="184" selection-end-column="84" />
+            <state relative-caret-position="2652">
+              <caret line="194" column="13" lean-forward="false" selection-start-line="194" selection-start-column="13" selection-end-line="194" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -77,16 +71,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="595">
               <caret line="40" column="28" lean-forward="false" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeScreen.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/HomeScreen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="93" lean-forward="false" selection-start-line="11" selection-start-column="93" selection-end-line="11" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -181,11 +165,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/LoginScreen.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/RegisterScreen.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/NewAccountScreen.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/UserScreen.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/DatabaseData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/AdminScreen.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/HomeScreen.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/UserScreen.java" />
       </list>
     </option>
   </component>
@@ -722,7 +706,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.81853783" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15013056" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -858,8 +842,6 @@
             <element signature="method#verifyUser#0;class#DatabaseData#0" expanded="false" />
             <element signature="method#createUser#0;class#DatabaseData#0" expanded="false" />
             <element signature="method#createAccount#0;class#DatabaseData#0" expanded="false" />
-            <element signature="method#createTransaction#0;class#DatabaseData#0" expanded="false" />
-            <element signature="method#updateUser#0;class#DatabaseData#0" expanded="false" />
             <element signature="method#getUsernames#0;class#DatabaseData#0" expanded="false" />
             <element signature="method#getAccounts#0;class#DatabaseData#0" expanded="false" />
             <element signature="method#getTransactions#0;class#DatabaseData#0" expanded="false" />
@@ -1074,18 +1056,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/Account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="52" column="102" lean-forward="false" selection-start-line="52" selection-start-column="102" selection-end-line="52" selection-end-column="102" />
-          <folding>
-            <element signature="e#705#706#0" expanded="false" />
-            <element signature="e#734#735#0" expanded="false" />
-            <element signature="method#addTransaction#0;class#Account#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/Transaction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
@@ -1112,14 +1082,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/UserScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2635">
-          <caret line="184" column="84" lean-forward="false" selection-start-line="184" selection-start-column="84" selection-end-line="184" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/LoginScreen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -1136,31 +1098,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/DatabaseData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="618">
-          <caret line="254" column="16" lean-forward="false" selection-start-line="254" selection-start-column="16" selection-end-line="254" selection-end-column="16" />
-          <folding>
-            <element signature="docComment;class#DatabaseData#0" expanded="false" />
-            <element signature="method#DatabaseData#0;class#DatabaseData#0" expanded="false" />
-            <element signature="method#verifyUsername#0;class#DatabaseData#0" expanded="false" />
-            <element signature="method#verifyUser#0;class#DatabaseData#0" expanded="false" />
-            <element signature="method#createUser#0;class#DatabaseData#0" expanded="false" />
-            <element signature="method#createAccount#0;class#DatabaseData#0" expanded="false" />
-            <element signature="method#createTransaction#0;class#DatabaseData#0" expanded="false" />
-            <element signature="method#updateUser#0;class#DatabaseData#0" expanded="false" />
-            <element signature="method#getUsernames#0;class#DatabaseData#0" expanded="false" />
-            <element signature="method#getAccounts#0;class#DatabaseData#0" expanded="false" />
-            <element signature="method#getTransactions#0;class#DatabaseData#0" expanded="false" />
-            <element signature="method#closeConnection#0;class#DatabaseData#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="52" column="42" lean-forward="false" selection-start-line="52" selection-start-column="42" selection-end-line="52" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/HomeScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="102" lean-forward="false" selection-start-line="10" selection-start-column="102" selection-end-line="10" selection-end-column="102" />
           <folding />
         </state>
       </provider>
@@ -1173,10 +1122,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/HomeScreen.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/DatabaseData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="93" lean-forward="false" selection-start-line="11" selection-start-column="93" selection-end-line="11" selection-end-column="93" />
+        <state relative-caret-position="1627">
+          <caret line="254" column="16" lean-forward="false" selection-start-line="254" selection-start-column="16" selection-end-line="254" selection-end-column="16" />
+          <folding>
+            <element signature="docComment;class#DatabaseData#0" expanded="false" />
+            <element signature="method#DatabaseData#0;class#DatabaseData#0" expanded="false" />
+            <element signature="method#verifyUsername#0;class#DatabaseData#0" expanded="false" />
+            <element signature="method#verifyUser#0;class#DatabaseData#0" expanded="false" />
+            <element signature="method#createUser#0;class#DatabaseData#0" expanded="false" />
+            <element signature="method#createAccount#0;class#DatabaseData#0" expanded="false" />
+            <element signature="method#getUsernames#0;class#DatabaseData#0" expanded="false" />
+            <element signature="method#getAccounts#0;class#DatabaseData#0" expanded="false" />
+            <element signature="method#getTransactions#0;class#DatabaseData#0" expanded="false" />
+            <element signature="method#closeConnection#0;class#DatabaseData#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/data/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="52" column="102" lean-forward="false" selection-start-line="52" selection-start-column="102" selection-end-line="52" selection-end-column="102" />
+          <folding>
+            <element signature="method#addTransaction#0;class#Account#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/revature/billy/bankapp/screen/UserScreen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2652">
+          <caret line="194" column="13" lean-forward="false" selection-start-line="194" selection-start-column="13" selection-end-line="194" selection-end-column="13" />
           <folding />
         </state>
       </provider>
